@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>AMBERSIVE - Popup - DEMO</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+    <script src="../bower_components/ng-file-upload/ng-file-upload-all.min.js"></script>
+    <script src="../bower_components/ambersive-helper/build/helper.min.js"></script>
+    <script src="../build/popup.min.js"></script>
+    <script>
+
+        angular.module('app', ['ambersive.popup','ambersive.helper'])
+           .controller('DemoController',function($scope,$log,$rootScope,PopupSrv){
+
+               $scope.openSingle = function() {
+                   PopupSrv.open({
+                       'name': 'Single',
+                       'settings': {
+                           'headline': 'Test Headline for single',
+                           'size': 'large',
+                           'main': {
+                               'content': 'This is a test'
+                           }
+                       }
+                   }).then(function (popup) {
+                       $rootScope.$on('submitPopup' + popup.unique, function (event, args) {
+
+                           popup.close();
+
+                       });
+                   });
+               };
+
+               $scope.open = function(){
+                   PopupSrv.open({
+                       'name':'test',
+                       'settings':{
+                           'headline':'Test with standard footer',
+                           'size':'large',
+                           'main':{
+                               'content':'Test Content'
+                           },
+                           'footer':{
+                               'url':'default'
+                           }
+                       }
+                   }).then(function(popup){
+                       $rootScope.$on('submitPopup'+popup.unique, function(event,args) {
+
+                           popup.close();
+
+                       });
+                   });
+
+                   PopupSrv.open({
+                       'name':'test2',
+                       'settings':{
+                           'headline':'Test Headline 2',
+                           'size':'small',
+                           'main':{
+                               'content':'Test Content'
+                           },
+                           'footer':{
+                               'content':'Nothing here'
+                           }
+                       }
+                   }).then(function(popup){
+
+                   });
+
+                   PopupSrv.open({
+                       'name':'test2',
+                       'settings':{
+                           'headline':'Test with submit Function',
+                           'size':'large',
+                           'main':{
+                               'content':'Test Content'
+                           },
+                           'footer':{
+                               'content':'default'
+                           },
+                           'submit':function(closeFn){
+                               alert('custom submit function');
+                               closeFn(true);
+                           },
+                           'text':{
+                               'close':'Cancel',
+                               'submit':'Save'
+                           }
+                       }
+                   }).then(function(popup){
+                       $rootScope.$on('submitPopup'+popup.unique, function(event,args) {
+
+                       });
+                   });
+
+               };
+
+        });
+
+    </script>
+
+</head>
+<body ng-controller="DemoController as demo">
+    <div class="container">
+        <div class="col-xs-12">
+            <h1>Popup Dialog</h1>
+            <button ng-click="openSingle()">Open a single Modal</button>
+            <button ng-click="open()">Open 3 Modals in a row (different settings)</button>
+        </div>
+    </div>
+</body>
+</html>

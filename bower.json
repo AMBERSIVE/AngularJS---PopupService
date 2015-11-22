@@ -1,0 +1,30 @@
+{
+  "name": "ambersive-popup",
+  "version": "0.0.1.0",
+  "authors": [
+    "Manuel Ihl <manuel.ihl@ambersive.com>"
+  ],
+  "description": "This module offers a simple popup/modal service.",
+  "main": "build/formly.js",
+  "keywords": [
+    "AngularJS",
+    "Angular",
+    "Popup",
+    "Modal"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com:AMBERSIVE/AngularJS---Popup.git"
+  },
+  "ignore": [
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": "*",
+    "ng-file-upload": "~9.0.13",
+    "ambersive-helper": "*"
+  },
+  "license": "MIT",
+  "homepage": "http://www.ambersive.com"
+}

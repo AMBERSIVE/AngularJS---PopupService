@@ -1,9 +1,9 @@
 # POPUP/MODAL Service for AngularJS
 
-This Service offers the possibility to generate mutliple modal dialogs and show it in a row.
+This Service offers the possibility to generate multiple modal dialogs and show it in a row.
 
 ### Version
-1.0.0.0
+1.0.0.1
 
 ### Installation
 

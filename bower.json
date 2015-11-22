@@ -1,20 +1,21 @@
 {
   "name": "ambersive-popup",
-  "version": "0.0.1.0",
+  "version": "1.0.0.1",
   "authors": [
     "Manuel Ihl <manuel.ihl@ambersive.com>"
   ],
-  "description": "This module offers a simple popup/modal service.",
+  "description": "This module offers a simple popup/modal service with the possibility to show multiple modals in a row.",
   "main": "build/formly.js",
   "keywords": [
     "AngularJS",
     "Angular",
     "Popup",
-    "Modal"
+    "Modal",
+    "Bootstrap"
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com:AMBERSIVE/AngularJS---Popup.git"
+    "url": "git://github.com:AMBERSIVE/AngularJS---PopupService.git"
   },
   "ignore": [
     "node_modules",

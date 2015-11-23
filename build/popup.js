@@ -264,6 +264,12 @@
 
                 };
 
+                $scope.call = function(e,broadcastName,broadcastParams){
+                    if(e !== undefined){e.preventDefault();}
+                    if(broadcastParams === undefined){broadcastParams = {};}
+                    $rootScope.$broadcast(broadcastName, broadcastParams);
+                };
+
                 $scope.close = function(e){
                     if(e !== undefined){e.preventDefault();}
                     $rootScope.$broadcast('closePopup', {});

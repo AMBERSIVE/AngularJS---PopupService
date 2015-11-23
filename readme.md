@@ -3,7 +3,7 @@
 This Service offers the possibility to generate multiple modal dialogs and show it in a row.
 
 ### Version
-1.0.0.1
+1.0.0.2
 
 ### Installation
 

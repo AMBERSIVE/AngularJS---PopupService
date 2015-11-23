@@ -1,11 +1,11 @@
 {
   "name": "ambersive-popup",
-  "version": "1.0.0.1",
+  "version": "1.0.0.2",
   "authors": [
     "Manuel Ihl <manuel.ihl@ambersive.com>"
   ],
   "description": "This module offers a simple popup/modal service with the possibility to show multiple modals in a row.",
-  "main": "build/formly.js",
+  "main": "build/popup.js",
   "keywords": [
     "AngularJS",
     "Angular",
